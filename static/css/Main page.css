@@ -1,0 +1,60 @@
+/* static/css/main.css */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* 헤더 영역 */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu-button {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* 메인 콘텐츠 영역 */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+
+.board-section, .calendar-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.board-section h2,
+.calendar-section h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+@media screen and (min-width: 768px) {
+  .main-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .board-section, .calendar-section {
+    flex: 1;
+    margin: 0 10px;
+  }
+}
