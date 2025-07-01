@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #f3e9ff; /* 연보라 배경 */
+  background-color: #f3e9ff;
   color: #333;
 }
 
@@ -10,7 +10,7 @@ body {
 .main-header {
   position: sticky;
   top: 0;
-  background-color: #6a0dad; /* 진한 보라 */
+  background-color: #6a0dad;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -24,28 +24,58 @@ body {
   font-weight: bold;
 }
 
-/* 메뉴 */
+/* 햄버거 토글 버튼 */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* 슬라이드 네비게이션 (오른쪽에서 밀려나오고 공백 없음) */
 .main-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  background-color: #6a0dad;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  padding: 60px 20px;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 1100;
 }
 
 .main-nav a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 
-.main-nav a:hover {
-  opacity: 0.7;
+.main-nav.active {
+  right: 0;
 }
 
-/* 햄버거 토글 버튼 */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
+/* 어두운 배경 오버레이 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* === 메인 콘텐츠 === */
@@ -78,35 +108,6 @@ body {
   text-align: center;
   padding: 15px;
   margin-top: 50px;
-}
-
-/* === 반응형 네비게이션 === */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .main-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: #6a0dad;
-    padding: 10px;
-    border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-  }
-
-  .main-nav.active {
-    display: flex;
-  }
-
-  .main-nav a {
-    padding: 10px 0;
-    color: white;
-  }
 }
 
 /* === 데스크탑에서 2열 레이아웃 === */

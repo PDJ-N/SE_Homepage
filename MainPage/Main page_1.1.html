@@ -5,7 +5,6 @@
   <title>SE LAB 메인페이지</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../static/css/Main page_1.1.css" />
-
 </head>
 <body>
 
@@ -13,14 +12,19 @@
   <header class="main-header">
     <div class="logo">SE LAB</div>
     <div class="menu-toggle" id="menuToggle">☰</div>
-    <nav class="main-nav" id="mainNav">
-      <a href="#board">게시판</a>
-      <a href="#calendar">캘린더</a>
-      <a href="#intro">소개</a>
-      <a href="#team">팀</a>
-      <a href="#contact">문의</a>
-    </nav>
   </header>
+
+  <!-- 슬라이드 메뉴 -->
+  <nav class="main-nav" id="mainNav">
+    <a href="#board">게시판</a>
+    <a href="#calendar">캘린더</a>
+    <a href="#intro">소개</a>
+    <a href="#team">팀</a>
+    <a href="#contact">문의</a>
+  </nav>
+
+  <!-- 어두운 배경 -->
+  <div class="overlay" id="overlay"></div>
 
   <!-- 메인 콘텐츠 -->
   <main class="main-content">
@@ -46,7 +50,7 @@
 
     <section id="contact" class="section card">
       <h2>📞 문의하기</h2>
-      <p>이메일: selab@example.com<br/>전화: 010-1234-5678</p>
+      <p>이메일: selab@example.com<br />전화: 010-1234-5678</p>
     </section>
   </main>
 
@@ -55,12 +59,20 @@
     ⓒ 2025 SE LAB. All rights reserved.
   </footer>
 
- <!-- JS로 메뉴 토글 -->
+  <!-- 메뉴 토글 스크립트 -->
   <script>
     const toggleBtn = document.getElementById('menuToggle');
     const nav = document.getElementById('mainNav');
+    const overlay = document.getElementById('overlay');
+
     toggleBtn.addEventListener('click', () => {
       nav.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      nav.classList.remove('active');
+      overlay.classList.remove('active');
     });
   </script>
 
