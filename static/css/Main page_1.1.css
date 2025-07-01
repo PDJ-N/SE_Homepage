@@ -1,0 +1,117 @@
+/* === 기본 스타일 === */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f3e9ff; /* 연보라 배경 */
+  color: #333;
+}
+
+/* === 헤더 영역 === */
+.main-header {
+  position: sticky;
+  top: 0;
+  background-color: #6a0dad; /* 진한 보라 */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* 메뉴 */
+.main-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.main-nav a:hover {
+  opacity: 0.7;
+}
+
+/* 햄버거 토글 버튼 */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* === 메인 콘텐츠 === */
+.main-content {
+  padding: 40px 20px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* 카드형 섹션 */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(106, 13, 173, 0.15);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #6a0dad;
+}
+
+/* === 푸터 === */
+.main-footer {
+  background-color: #4b0082;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 50px;
+}
+
+/* === 반응형 네비게이션 === */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #6a0dad;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .main-nav a {
+    padding: 10px 0;
+    color: white;
+  }
+}
+
+/* === 데스크탑에서 2열 레이아웃 === */
+@media (min-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}

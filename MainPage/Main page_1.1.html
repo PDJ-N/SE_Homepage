@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>SE LAB 메인페이지</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../static/css/Main page_1.1.css" />
+
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="main-header">
+    <div class="logo">SE LAB</div>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <nav class="main-nav" id="mainNav">
+      <a href="#board">게시판</a>
+      <a href="#calendar">캘린더</a>
+      <a href="#intro">소개</a>
+      <a href="#team">팀</a>
+      <a href="#contact">문의</a>
+    </nav>
+  </header>
+
+  <!-- 메인 콘텐츠 -->
+  <main class="main-content">
+    <section id="board" class="section card">
+      <h2>📌 최근 게시판</h2>
+      <p>게시판의 최근 글이 이곳에 표시됩니다.</p>
+    </section>
+
+    <section id="calendar" class="section card">
+      <h2>📅 캘린더</h2>
+      <p>달력 기능이 여기에 들어갈 예정입니다.</p>
+    </section>
+
+    <section id="intro" class="section card">
+      <h2>🧪 실험실 소개</h2>
+      <p>이곳은 SE LAB에 대한 간단한 소개 공간입니다.</p>
+    </section>
+
+    <section id="team" class="section card">
+      <h2>👥 팀원 소개</h2>
+      <p>팀원들의 이름, 역할, 연락처 등을 여기에 나열할 수 있습니다.</p>
+    </section>
+
+    <section id="contact" class="section card">
+      <h2>📞 문의하기</h2>
+      <p>이메일: selab@example.com<br/>전화: 010-1234-5678</p>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="main-footer">
+    ⓒ 2025 SE LAB. All rights reserved.
+  </footer>
+
+ <!-- JS로 메뉴 토글 -->
+  <script>
+    const toggleBtn = document.getElementById('menuToggle');
+    const nav = document.getElementById('mainNav');
+    toggleBtn.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
